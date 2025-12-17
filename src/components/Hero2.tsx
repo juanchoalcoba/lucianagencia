@@ -19,7 +19,7 @@ export const Hero2 = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/70 to-blue-950/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/70 to-blue-950/70" />
 
       {/* Contenido */}
       <motion.div
