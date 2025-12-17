@@ -23,11 +23,11 @@ export const About2 = () => {
   return (
     <section
       id="about"
-      className="relative py-40 bg-gradient-to-br from-blue-950 via-blue-950 to-blue-950 text-white overflow-hidden"
+      className="relative py-40 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
     >
       {/* Decorative blur */}
-      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-blue-900/30 rounded-full blur-[120px]" />
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px]" />
+      <div className="absolute -top-40 -right-40 w-125 h-125 bg-blue-900/30 rounded-full blur-[120px]" />
+      <div className="absolute -bottom-40 -left-40 w-125 h-125 bg-cyan-500/20 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}

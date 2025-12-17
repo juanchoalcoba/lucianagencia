@@ -81,10 +81,9 @@ export const Services = () => {
   return (
     <section
       id="servicios"
-      className="relative py-40 bg-slate-300 overflow-hidden"
+      className="relative py-40 bg-slate-950 overflow-hidden"
     >
       {/* Decorative background */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-225 h-225 bg-blue-100/50 rounded-full blur-[120px]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -94,12 +93,12 @@ export const Services = () => {
           viewport={{ once: true }}
           className="max-w-3xl"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-blue-950">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-200">
             Servicios pensados para <br />
-            <span className="text-blue-800">cada tipo de viaje</span>
+            <span className="text-blue-200">cada tipo de viaje</span>
           </h2>
 
-          <p className="mt-6 text-lg text-slate-600">
+          <p className="mt-6 text-lg text-slate-400">
             En LUCIAN ofrecemos soluciones de transporte adaptadas a distintos
             contextos: turismo, empresas, grupos y traslados especiales.
             Nuestra experiencia nos permite responder con eficiencia,
