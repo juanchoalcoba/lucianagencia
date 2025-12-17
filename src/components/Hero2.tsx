@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Hero2 = () => {
   return (
     <section
       id="hero"
-      className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden bg-slate-950 mt-16" 
+      className="relative h-[80vh] min-h-150 flex items-center overflow-hidden bg-slate-950 mt-16" 
       /* h-[80vh] limita el alto, mt-16 deja espacio para el navbar */
     >
       {/* Fondo sutil */}
