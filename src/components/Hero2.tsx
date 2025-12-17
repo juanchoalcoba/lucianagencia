@@ -1,89 +1,108 @@
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Hero2 = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative h-[80vh] min-h-[600px] flex items-center overflow-hidden bg-slate-950 mt-16" 
+      /* h-[80vh] limita el alto, mt-16 deja espacio para el navbar */
     >
-      {/* Imagen de fondo */}
-      <motion.img
-        src="/1.jpg"
-        alt="LUCIAN buses"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute inset-0 w-full h-full object-cover opacity-90"
-      />
+      {/* Fondo sutil */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
+      </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/70 to-blue-950/90" />
-
-      {/* Contenido */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 text-center px-6 text-white"
-      >
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-          Movemos personas.
-          <span className="block text-blue-200">
-            Conectamos destinos.
-          </span>
-        </h1>
-
-        <p className="mt-6 max-w-2xl mx-auto text-lg text-blue-100">
-          LUCIAN es una agencia de ómnibus enfocada en seguridad,
-          puntualidad y confort.
-        </p>
-
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            to="/services"
-            className="px-8 py-4 rounded-2xl bg-white text-blue-700 font-semibold shadow-xl hover:scale-105 transition"
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          
+          {/* LADO IZQUIERDO: TEXTO */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-1/2 text-left"
           >
-            Ver servicios
-          </Link>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-4 tracking-wider uppercase">
+              Transporte Profesional
+            </div>
 
-          <button className="px-8 py-4 rounded-2xl border border-white/40 hover:bg-white/10 transition">
-            Contactar
-          </button>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+              Movemos personas. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-100">
+                Conectamos destinos.
+              </span>
+            </h1>
+
+            <p className="mt-4 text-base md:text-lg text-slate-400 leading-relaxed max-w-lg">
+              Seguridad y confort en cada trayecto. LUCIAN es la agencia de ómnibus 
+              que prioriza tu tiempo y comodidad.
+            </p>
+
+            {/* BOTONES */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/services"
+                className="group px-6 py-3 rounded-xl bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all flex items-center gap-2 text-sm"
+              >
+                Ver servicios
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <button className="px-6 py-3 rounded-xl border border-slate-700 text-slate-300 font-bold hover:bg-white/5 transition-all text-sm">
+                Contactar
+              </button>
+            </div>
+
+            {/* REDES SOCIALES MÁS PEQUEÑAS */}
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex gap-4">
+                {[
+                  { icon: <FaFacebookF />, link: "#" },
+                  { icon: <FaInstagram />, link: "#" },
+                  { icon: <FaWhatsapp />, link: "#" },
+                ].map((social, i) => (
+                  <a 
+                    key={i}
+                    href={social.link}
+                    className="text-slate-500 hover:text-blue-400 transition-colors text-lg"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* LADO DERECHO: IMAGEN MÁS COMPACTA */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-[45%] relative"
+          >
+            <div className="relative group">
+              {/* Resplandor de fondo para la imagen */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              
+              <img
+                src="/1.jpg"
+                alt="Lucian Bus"
+                className="relative z-10 w-full h-[350px] lg:h-[450px] object-cover rounded-[2rem] shadow-2xl"
+              />
+              
+              {/* Tarjeta flotante más discreta */}
+              <div className="absolute -bottom-4 -right-4 z-20 bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-2xl hidden md:block">
+                <p className="text-blue-400 font-black text-lg leading-none">100%</p>
+                <p className="text-slate-500 text-[10px] uppercase font-bold tracking-tighter">Seguridad</p>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
-
-        {/* Social icons */}
-        <div className="mt-10 flex justify-center gap-6">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/70 hover:text-white hover:scale-110 transition-all"
-          >
-            <FaFacebookF size={38} />
-          </a>
-
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/70 hover:text-orange-600 hover:scale-110 transition-all"
-          >
-            <FaInstagram size={30} />
-          </a>
-
-          <a
-            href="https://wa.me/541112345678"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/70 hover:text-green-400 hover:scale-110 transition-all"
-          >
-            <FaWhatsapp size={30} />
-          </a>
-        </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
