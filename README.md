@@ -30,7 +30,7 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone [https://github.com/juanchoalcoba/lucianagencia](https://github.com/juanchoalcoba/lucianagencia)
+    git clone https://github.com/juanchoalcoba/lucianagencia
     ```
 
 2.  **Entra al directorio del proyecto:**
@@ -52,7 +52,9 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 
 ## 📸 Vista Previa (Screenshots)
 
-> **Nota:** Aquí puedes añadir capturas de pantalla de la sección de Hero, el catálogo de viajes o el formulario de contacto para mostrar el diseño.
+> **Nota:**
+![Vista principal de Lucian Agencia de Viajes](./fotorepo.png)
+
 
 ---
 
