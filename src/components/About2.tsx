@@ -23,7 +23,8 @@ export const About2 = () => {
   return (
     <section
       id="about"
-      className="relative py-40 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
+      /* CAMBIO: pt-32 para dar aire arriba y pb-4 para cerrar bien abajo */
+      className="relative pt-32 pb-4 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
     >
       {/* Decorative blur */}
       <div className="absolute -top-40 -right-40 w-125 h-125 bg-blue-900/30 rounded-full blur-[120px]" />
@@ -51,11 +52,10 @@ export const About2 = () => {
             En LUCIAN combinamos tecnología, experiencia y atención al detalle
             para ofrecer un servicio que cumple, responde y supera expectativas.
           </p>
-          
         </motion.div>
 
         {/* Cards */}
-        <div className="mt-24 grid md:grid-cols-3 gap-10">
+        <div className="mt-20 grid md:grid-cols-3 gap-10">
           {items.map((item, i) => (
             <motion.div
               key={i}
@@ -70,32 +70,36 @@ export const About2 = () => {
                 <item.icon className="w-7 h-7 text-cyan-100" />
               </div>
 
-              <h3 className="mt-8 text-2xl font-bold">
-                {item.title}
-              </h3>
+              <h3 className="mt-8 text-2xl font-bold">{item.title}</h3>
 
               <p className="mt-4 text-blue-100 leading-relaxed">
                 {item.text}
               </p>
-              
             </motion.div>
-            
           ))}
         </div>
-        <div className="flex justify-center items-center">
-  <img
-    src="./ultima.png"
-    alt=""
-    className="
-          object-contain
-      inline-flex
-      h-128
-      filter
-      drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]
-    "
-  />
-</div>
 
+        {/* IMAGEN FINAL AJUSTADA */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex justify-center items-center mt-12 overflow-hidden"
+        >
+          <img
+            src="./ultima.png"
+            alt="Lucian Logo"
+            className="
+              object-contain
+              /* Altura controlada: más pequeña en móvil para no generar scroll innecesario */
+              h-64 sm:h-80 md:h-96 lg:h-110 
+              block
+              filter
+              drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]
+            "
+          />
+        </motion.div>
       </div>
     </section>
   );
