@@ -19,7 +19,8 @@ export const Hero2 = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="mx-auto w-full max-w-[1280px] px-6 relative z-10">
+
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* LADO IZQUIERDO: TEXTO */}
           <motion.div
@@ -94,7 +95,7 @@ export const Hero2 = () => {
                 src="/1.jpg"
                 alt="Lucian Bus"
                 /* CAMBIO: Altura ajustable en móvil para que no sea gigante */
-                className="relative z-10 w-full h-[250px] sm:h-[350px] lg:h-[450px] object-cover rounded-[2rem] shadow-2xl"
+                className="relative z-10 w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover rounded-[2rem] shadow-2xl"
               />
 
               {/* Tarjeta flotante (la mantenemos oculta en móviles muy pequeños si estorba) */}
