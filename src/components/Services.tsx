@@ -126,16 +126,17 @@ export const Services = () => {
                 {service.title}
               </h3>
 
-              <p className="mt-4 text-slate-600">
+              <p className="mt-6 text-slate-600">
                 {service.description}
               </p>
 
               <ul className="mt-6 space-y-2 text-slate-600">
                 {service.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="mt-1 w-2 h-2 rounded-full bg-blue-800" />
-                    {point}
-                  </li>
+                  <li key={idx} className="relative pl-4 text-slate-600 leading-relaxed">
+  <span className="absolute left-0 top-[0.65em] w-2 h-2 rounded-full bg-blue-800" />
+  {point}
+</li>
+
                 ))}
               </ul>
             </motion.div>

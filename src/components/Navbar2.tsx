@@ -1,61 +1,101 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Bus, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-/* =========================
-NAVBAR
-========================= */
 export const Navbar2 = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur border-b border-blue-100">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-2 text-blue-900 font-extrabold text-xl">
-          <Bus className="w-6 h-6" /> LUCIAN
-        </div>
+    <nav className="fixed top-0 left-0 w-full z-50">
+      {/* Glass background */}
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-xl border-b border-blue-200/30" />
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <Link to="/" className="hover:text-blue-600">
-            Inicio
+      <div className="relative mx-auto w-full max-w-[1280px] px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* LOGO */}
+          <Link
+            to="/"
+            className="flex items-center gap-2 font-black text-blue-900 tracking-tight"
+          >
+            <div className="p-2 rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-600/30">
+              <Bus className="w-5 h-5" />
+            </div>
+            <span className="text-lg">LUCIAN</span>
           </Link>
-          <a href="#nosotros" className="hover:text-blue-600">
-            Nosotros
-          </a>
-          <Link to="/services" className="hover:text-blue-600">
-            Servicios
-          </Link>
-          <a href="#contact" className="hover:text-blue-600">
-            Contacto
-          </a>
-        </div>
 
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
-          {open ? <X /> : <Menu />}
-        </button>
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-slate-700">
+            {[
+              { label: "Inicio", to: "/" },
+              { label: "Nosotros", to: "#nosotros" },
+              { label: "Servicios", to: "/services" },
+              { label: "Contacto", to: "#contact" },
+            ].map((item, i) => (
+              <Link
+                key={i}
+                to={item.to}
+                className="relative group transition-colors hover:text-blue-600"
+              >
+                {item.label}
+                <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full" />
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA DESKTOP */}
+          <div className="hidden md:block">
+            <Link
+              to="/services"
+              className="px-5 py-2 rounded-xl bg-blue-600 text-white text-sm font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all"
+            >
+              Reservar
+            </Link>
+          </div>
+
+          {/* MOBILE BUTTON */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden p-2 rounded-xl bg-blue-600 text-white shadow-lg"
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
-      {open && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          className="md:hidden bg-white px-6 pb-6 space-y-4"
-        >
-          <a href="#hero" className="block">
-            Inicio
-          </a>
-          <a href="#about" className="block">
-            Nosotros
-          </a>
-          <a href="#services" className="block">
-            Servicios
-          </a>
-          <a href="#contact" className="block">
-            Contacto
-          </a>
-        </motion.div>
-      )}
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-blue-100"
+          >
+            <div className="px-6 py-6 space-y-4 text-slate-700 font-semibold">
+              {["Inicio", "Nosotros", "Servicios", "Contacto"].map(
+                (item, i) => (
+                  <a
+                    key={i}
+                    href="#"
+                    className="block py-2 text-lg hover:text-blue-600 transition-colors"
+                  >
+                    {item}
+                  </a>
+                )
+              )}
+
+              <a
+                href="#contact"
+                className="block mt-4 text-center px-6 py-3 rounded-xl bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30"
+              >
+                Reservar ahora
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
