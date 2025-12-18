@@ -51,6 +51,7 @@ export const About2 = () => {
             En LUCIAN combinamos tecnología, experiencia y atención al detalle
             para ofrecer un servicio que cumple, responde y supera expectativas.
           </p>
+          
         </motion.div>
 
         {/* Cards */}
@@ -76,9 +77,25 @@ export const About2 = () => {
               <p className="mt-4 text-blue-100 leading-relaxed">
                 {item.text}
               </p>
+              
             </motion.div>
+            
           ))}
         </div>
+        <div className="flex justify-center items-center">
+  <img
+    src="./ultima.png"
+    alt=""
+    className="
+          object-contain
+      inline-flex
+      h-128
+      filter
+      drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]
+    "
+  />
+</div>
+
       </div>
     </section>
   );
