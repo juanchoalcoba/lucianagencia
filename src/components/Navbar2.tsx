@@ -50,7 +50,7 @@ export const Navbar2 = () => {
           <div className="hidden md:block">
             <Link
               to="/reservas"
-              className="px-5 py-2 rounded-xl bg-blue-600 text-white text-sm font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all"
+              className="px-5 py-2 rounded-xl bg-blue-800 text-white text-sm font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all"
             >
               Reservar
             </Link>

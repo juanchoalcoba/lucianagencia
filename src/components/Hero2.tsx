@@ -56,7 +56,7 @@ export const Hero2 = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              <button className="px-6 py-3 rounded-xl border border-slate-700 text-slate-300 font-bold hover:bg-white/5 transition-all text-sm">
+              <button className="px-6 py-3 rounded-xl border border-slate-700 cursor-pointer text-slate-300 font-bold hover:bg-white hover:text-black transition-all text-sm">
                 Contactar
               </button>
             </div>
