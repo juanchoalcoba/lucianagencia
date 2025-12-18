@@ -95,7 +95,7 @@ export const Hero2 = () => {
                 src="/1.jpg"
                 alt="Lucian Bus"
                 /* CAMBIO: Altura ajustable en móvil para que no sea gigante */
-                className="relative z-10 w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover rounded-[2rem] shadow-2xl"
+                className="relative z-10 w-full h-[250px] sm:h-[350px] lg:h-[360px] object-cover rounded-[2rem] shadow-2xl"
               />
 
               {/* Tarjeta flotante (la mantenemos oculta en móviles muy pequeños si estorba) */}
