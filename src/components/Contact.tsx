@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <section
       id="contacto"
-      className="relative py-40 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden px-6"
+      className="relative py-40 bg-linear-to-br from-slate-800 via-black to-slate-800 text-white overflow-hidden px-6"
     >
       {/* Decorative lights */}
       <div className="absolute -top-40 -left-40 w-125 h-125 bg-cyan-500/20 rounded-full blur-[120px]" />
