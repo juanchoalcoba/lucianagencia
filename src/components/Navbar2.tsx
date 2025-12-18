@@ -6,6 +6,14 @@ import { Link } from "react-router-dom";
 export const Navbar2 = () => {
   const [open, setOpen] = useState(false);
 
+  // Definimos los links una sola vez para evitar errores
+  const navLinks = [
+    { label: "Inicio", to: "/" },
+    { label: "Destinos", to: "/destinos" },
+    { label: "Servicios", to: "/services" },
+    { label: "Contacto", to: "/contacto" }, // Cambiado a ruta si usas router, o "#contact"
+  ];
+
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       {/* Glass background */}
@@ -21,17 +29,12 @@ export const Navbar2 = () => {
             <div className="p-2 rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-600/30">
               <Bus className="w-5 h-5" />
             </div>
-            <span className="text-lg">LUCIAN</span>
+            <span className="text-lg tracking-tighter">LUCIAN</span>
           </Link>
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-10 text-sm font-semibold text-slate-700">
-            {[
-              { label: "Inicio", to: "/" },
-              { label: "Nosotros", to: "#nosotros" },
-              { label: "Servicios", to: "/services" },
-              { label: "Contacto", to: "#contact" },
-            ].map((item, i) => (
+            {navLinks.map((item, i) => (
               <Link
                 key={i}
                 to={item.to}
@@ -56,9 +59,9 @@ export const Navbar2 = () => {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-xl bg-blue-600 text-white shadow-lg"
+            className="md:hidden p-2 rounded-xl bg-blue-600 text-white shadow-lg transition-transform active:scale-90"
           >
-            {open ? <X /> : <Menu />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -67,31 +70,31 @@ export const Navbar2 = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-blue-100"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-white/98 backdrop-blur-2xl border-b border-blue-100 overflow-hidden"
           >
-            <div className="px-6 py-6 space-y-4 text-slate-700 font-semibold">
-              {["Inicio", "Nosotros", "Servicios", "Contacto"].map(
-                (item, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="block py-2 text-lg hover:text-blue-600 transition-colors"
-                  >
-                    {item}
-                  </a>
-                )
-              )}
+            <div className="px-6 py-8 space-y-4 text-slate-700 font-semibold">
+              {navLinks.map((item, i) => (
+                <Link
+                  key={i}
+                  to={item.to} // <--- AQUÍ ESTABA EL ERROR, ahora usa item.to
+                  onClick={() => setOpen(false)} // Cierra el menú al hacer click
+                  className="block py-3 text-xl tracking-tight hover:text-blue-600 transition-colors border-b border-slate-50 last:border-0"
+                >
+                  {item.label}
+                </Link>
+              ))}
 
-              <a
-                href="#contact"
-                className="block mt-4 text-center px-6 py-3 rounded-xl bg-blue-600 text-white font-bold shadow-lg shadow-blue-600/30"
+              <Link
+                to="/services"
+                onClick={() => setOpen(false)}
+                className="block mt-6 text-center px-6 py-4 rounded-2xl bg-blue-600 text-white font-extrabold shadow-xl shadow-blue-600/30 active:scale-95 transition-transform"
               >
                 Reservar ahora
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
