@@ -7,34 +7,27 @@ export const Hero2 = () => {
   return (
     <section
       id="hero"
-      className="
-        relative overflow-hidden mt-16
-        h-auto py-12
-        lg:min-h-[85vh] lg:h-screen lg:flex lg:items-center
-      "
+      className="relative 
+    /* Móvil: altura automática con espacio arriba y abajo */
+    h-auto py-12 
+    /* Desktop: Altura mínima para que llene la pantalla y centrado vertical */
+    lg:min-h-[85vh] lg:h-screen lg:flex lg:items-center 
+    overflow-hidden bg-linear-to-br from-slate-800 via-black to-slate-800 mt-16"
     >
-      {/* IMAGEN DE FONDO FULL */}
+      {/* Fondo sutil */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/fondo.jpg"
-          alt="Fondo Lucian"
-          className="w-full h-full object-cover object-center"
-        />
-
-        {/* OVERLAYS */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-slate-900/70 to-blue-900/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950" />
       </div>
 
-      {/* CONTENIDO */}
-      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+      <div className="mx-auto w-full max-w-[1280px] px-6 relative z-10">
 
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* LADO IZQUIERDO: TEXTO */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            /* CAMBIO: Centrado en móvil, izquierda en desktop */
             className="w-full lg:w-1/2 text-center lg:text-left"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-bold mb-4 tracking-wider uppercase">
@@ -63,29 +56,32 @@ export const Hero2 = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              <Link
-                to="/reservas"
-                className="px-6 py-3 rounded-xl border border-slate-700 text-slate-300 font-bold hover:bg-white hover:text-black transition-all text-sm"
-              >
+              <Link to="/reservas" className="px-6 py-3 rounded-xl border border-slate-700 cursor-pointer text-slate-300 font-bold hover:bg-white hover:text-black transition-all text-sm">
                 Reservas
               </Link>
             </div>
 
-            {/* REDES */}
+            {/* REDES SOCIALES */}
             <div className="mt-8 flex items-center justify-center lg:justify-start gap-4">
-              {[FaFacebookF, FaInstagram, FaWhatsapp].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="text-slate-500 hover:text-blue-400 transition-colors text-lg"
-                >
-                  <Icon />
-                </a>
-              ))}
+              <div className="flex gap-4">
+                {[
+                  { icon: <FaFacebookF />, link: "#" },
+                  { icon: <FaInstagram />, link: "#" },
+                  { icon: <FaWhatsapp />, link: "#" },
+                ].map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.link}
+                    className="text-slate-500 hover:text-blue-400 transition-colors text-lg"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
 
-          {/* LADO DERECHO: IMAGEN ORIGINAL (SIN CAMBIOS) */}
+          {/* LADO DERECHO: IMAGEN */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -98,9 +94,11 @@ export const Hero2 = () => {
               <img
                 src="/1.jpg"
                 alt="Lucian Bus"
+                /* CAMBIO: Altura ajustable en móvil para que no sea gigante */
                 className="relative z-10 w-full h-[250px] sm:h-[350px] lg:h-[360px] object-cover rounded-[2rem] shadow-2xl"
               />
 
+              {/* Tarjeta flotante (la mantenemos oculta en móviles muy pequeños si estorba) */}
               <div className="absolute -bottom-4 -right-2 z-20 bg-slate-900 border border-slate-800 p-4 rounded-2xl shadow-2xl">
                 <p className="text-blue-400 font-black text-lg leading-none">
                   100%
@@ -111,9 +109,12 @@ export const Hero2 = () => {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
   );
 };
+
+
+
+
