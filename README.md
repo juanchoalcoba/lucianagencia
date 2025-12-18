@@ -30,7 +30,7 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone [https://github.com/juanchoalcoba/lucianagencia](https://github.com/juanchoalcoba/lucianagencia)
+    git clone [https://github.com/juanchoalcoba/lucianagencia]
     ```
 
 2.  **Entra al directorio del proyecto:**
