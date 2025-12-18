@@ -24,7 +24,7 @@ export const About2 = () => {
     <section
       id="about"
       /* CAMBIO: pt-32 para dar aire arriba y pb-4 para cerrar bien abajo */
-      className="relative pt-32 pb-4 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
+      className="relative pt-32 pb-4 bg-linear-to-br from-slate-800 via-black to-slate-800 text-white overflow-hidden"
     >
       {/* Decorative blur */}
       <div className="absolute -top-40 -right-40 w-125 h-125 bg-blue-900/30 rounded-full blur-[120px]" />

@@ -39,7 +39,7 @@ const ReservationSystem = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 pt-32 pb-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-slate-800 via-black to-slate-800 pt-32 pb-12 px-4">
       <div className="max-w-5xl mx-auto">
 
         {/* HEADER */}
@@ -60,7 +60,7 @@ const ReservationSystem = () => {
             {/* PASO 1 */}
             <section>
               <div className="flex items-center mb-6">
-                <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm mr-3 font-bold">1</span>
+                <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-sm mr-3 font-bold">1</span>
                 <h2 className="text-xl font-medium text-gray-100 tracking-tight">
                   Selecciona tu destino
                 </h2>
@@ -101,7 +101,7 @@ const ReservationSystem = () => {
               booking.destination ? 'opacity-100' : 'opacity-30 pointer-events-none translate-y-4'
             }`}>
               <div className="flex items-center mb-6">
-                <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm mr-3 font-bold">2</span>
+                <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-sm mr-3 font-bold">2</span>
                 <h2 className="text-xl font-medium text-gray-100 tracking-tight">
                   Detalles del viaje
                 </h2>
@@ -149,7 +149,7 @@ const ReservationSystem = () => {
               booking.date ? 'opacity-100' : 'opacity-30 pointer-events-none translate-y-4'
             }`}>
               <div className="flex items-center mb-6">
-                <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center text-sm mr-3 font-bold">3</span>
+                <span className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center text-sm mr-3 font-bold">3</span>
                 <h2 className="text-xl font-medium text-gray-100 tracking-tight">
                   Horario de embarque
                 </h2>

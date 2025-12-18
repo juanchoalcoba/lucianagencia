@@ -12,7 +12,7 @@ export const Hero2 = () => {
     h-auto py-12 
     /* Desktop: Altura mínima para que llene la pantalla y centrado vertical */
     lg:min-h-[85vh] lg:h-screen lg:flex lg:items-center 
-    overflow-hidden bg-slate-950 mt-16"
+    overflow-hidden bg-linear-to-br from-slate-800 via-black to-slate-800 mt-16"
     >
       {/* Fondo sutil */}
       <div className="absolute inset-0 z-0">
