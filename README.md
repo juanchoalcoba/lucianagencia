@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# ✈️ Lucian Agencia de Viajes - MVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido al repositorio de **Lucian**, una plataforma moderna diseñada para transformar la experiencia de planificar y reservar viajes! Este proyecto es un Producto Mínimo Viable (MVP) enfocado en ofrecer una interfaz fluida, visualmente impactante y altamente interactiva.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## 🚀 Tecnologías Utilizadas
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Para este proyecto, seleccionamos un stack de alto rendimiento para garantizar velocidad y una experiencia de usuario (UX) premium:
 
-## Expanding the ESLint configuration
+* **React.js**: Biblioteca principal para la construcción de interfaces de usuario.
+* **Tailwind CSS**: Framework de CSS basado en utilidades para un diseño rápido, responsivo y personalizado.
+* **Framer Motion**: Utilizado para animaciones de componentes, transiciones de página y gestos intuitivos.
+* **GSAP (GreenSock Animation Platform)**: Implementado para animaciones complejas basadas en scroll y secuencias de alta precisión.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Características Principales
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-   **Interfaz Inmersiva**: Uso de animaciones avanzadas para captar la atención del usuario desde el primer segundo.
+-   **Diseño Responsive**: Totalmente optimizado para dispositivos móviles, tablets y escritorio.
+-   **Catálogo de Destinos**: Sección dinámica para explorar lugares turísticos con efectos de hover y scroll.
+-   **Navegación Fluida**: Transiciones suaves entre secciones gracias a la combinación de Framer Motion y GSAP.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Instalación y Configuración
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Sigue estos pasos para ejecutar el proyecto localmente:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/juanchoalcoba/lucianagencia](https://github.com/juanchoalcoba/lucianagencia)
+    ```
+
+2.  **Entra al directorio del proyecto:**
+    ```bash
+    cd lucianagencia
+    ```
+
+3.  **Instala las dependencias:**
+    ```bash
+    npm install
+    ```
+
+4.  **Inicia el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## 📸 Vista Previa (Screenshots)
+
+> **Nota:** Aquí puedes añadir capturas de pantalla de la sección de Hero, el catálogo de viajes o el formulario de contacto para mostrar el diseño.
+
+---
+
+## 🏗️ Road Map (Próximas Mejoras)
+
+- [ ] Integración con pasarela de pagos.
+- [ ] Panel de administración para gestión de destinos.
+- [ ] Sistema de autenticación de usuarios.
+- [ ] Filtros avanzados de búsqueda por presupuesto y clima.
+
+---
+
+## 🤝 Contribuciones
+
+Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas será **muy apreciada**.
+
+1. Abre un *Fork* del proyecto.
+2. Crea tu *Feature Branch* (`git checkout -b feature/AmazingFeature`).
+3. Haz un *Commit* de tus cambios (`git commit -m 'Add some AmazingFeature'`).
+4. Haz un *Push* a la rama (`git push origin feature/AmazingFeature`).
+5. Abre un *Pull Request*.
+
+---
+
+Desarrollado con ❤️ por Juan Alcoba
