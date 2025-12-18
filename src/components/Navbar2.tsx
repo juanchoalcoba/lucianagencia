@@ -49,7 +49,7 @@ export const Navbar2 = () => {
           {/* CTA DESKTOP */}
           <div className="hidden md:block">
             <Link
-              to="/services"
+              to="/reservas"
               className="px-5 py-2 rounded-xl bg-blue-600 text-white text-sm font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-all"
             >
               Reservar
@@ -89,7 +89,7 @@ export const Navbar2 = () => {
               ))}
 
               <Link
-                to="/services"
+                to="/reservas"
                 onClick={() => setOpen(false)}
                 className="block mt-6 text-center px-6 py-4 rounded-2xl bg-blue-600 text-white font-extrabold shadow-xl shadow-blue-600/30 active:scale-95 transition-transform"
               >
