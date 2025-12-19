@@ -49,7 +49,7 @@ const destinations: Destination[] = [
     color: "bg-orange-500",
     category: "Relax"
   },
-  {
+  { 
     id: 4,
     title: "Buenos Aires City",
     location: "Argentina",
@@ -80,16 +80,16 @@ const DestinationCard = ({ dest, index }: { dest: Destination, index: number }) 
         />
         {/* Badge de Localización */}
         <div className="absolute top-5 left-5">
-          <span className="bg-white/95 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-xl text-[10px] font-black uppercase tracking-[0.1em] shadow-sm">
+          <span className="bg-white/95 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-sm">
             {dest.location}
           </span>
         </div>
         {/* Overlay gradiente suave al hacer hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       {/* Cuerpo de la Tarjeta */}
-      <div className="p-7 flex flex-col flex-grow">
+      <div className="p-7 flex flex-col grow">
         <div className="flex justify-between items-start mb-4">
           <h3 className="text-xl font-black text-gray-800 leading-tight tracking-tight">
             {dest.title}

@@ -65,10 +65,10 @@ const ROUTES: Route[] = [
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-[1300px] mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-325 mx-auto px-6 py-20">
         
         {/* HERO */}
         <motion.div
@@ -82,7 +82,7 @@ const ROUTES: Route[] = [
           </p>
           <h1 className="text-4xl md:text-6xl font-black leading-tight">
             El viaje comienza <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-blue-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-slate-200 to-blue-400">
               mucho antes de subir.
             </span>
           </h1>
@@ -104,7 +104,7 @@ const ROUTES: Route[] = [
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-3xl bg-gradient-to-br from-slate-900/80 to-black/80 border border-white/10 p-8 shadow-xl"
+              className="rounded-3xl bg-linear-to-br from-slate-900/80 to-black/80 border border-white/10 p-8 shadow-xl"
             >
               <h3 className="text-2xl font-black mb-2">
                 {route.origin} – {route.destination}

@@ -19,7 +19,7 @@ export const Navbar2 = () => {
       {/* Glass background */}
       <div className="absolute inset-0 bg-white/70 backdrop-blur-xl border-b border-blue-200/30" />
 
-      <div className="relative mx-auto w-full max-w-[1280px] px-6">
+      <div className="relative mx-auto w-full max-w-7xl px-6">
         <div className="flex items-center justify-between h-16">
           {/* LOGO */}
           <Link
@@ -41,7 +41,7 @@ export const Navbar2 = () => {
                 className="relative group transition-colors hover:text-blue-600"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-blue-600 transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-blue-600 transition-all group-hover:w-full" />
               </Link>
             ))}
           </div>
