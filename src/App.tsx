@@ -4,6 +4,7 @@ import ServicesPage from "./pages/ServicesPage";
 import Home from "./components/Home";
 import DestinationsGrid from "./pages/DestinationGrid";
 import ReservationSystem from "./pages/Reservation";
+import Rutas from "./pages/Routes";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/destinos" element={<DestinationsGrid />} />
           <Route path="/reservas" element={<ReservationSystem />} />
+          <Route path="/rutas" element={<Rutas />} />
         </Route>
       </Routes>
     </BrowserRouter>

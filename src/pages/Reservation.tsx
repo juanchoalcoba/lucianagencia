@@ -183,7 +183,7 @@ const ReservationSystem = () => {
                   <Bus className="text-gold-500 rotate-45" size={20} />
                 </div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400">
-                  Boarding Pass Summary
+                  Resumen de la tarjeta de embarque
                 </p>
               </div>
 

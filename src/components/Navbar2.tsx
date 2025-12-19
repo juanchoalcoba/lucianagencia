@@ -11,7 +11,7 @@ export const Navbar2 = () => {
     { label: "Inicio", to: "/" },
     { label: "Destinos", to: "/destinos" },
     { label: "Servicios", to: "/services" },
-    { label: "Contacto", to: "/contacto" }, // Cambiado a ruta si usas router, o "#contact"
+    { label: "Rutas", to: "/rutas" }, // Cambiado a ruta si usas router, o "#contact"
   ];
 
   return (
