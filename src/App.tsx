@@ -5,8 +5,30 @@ import Home from "./components/Home";
 import DestinationsGrid from "./pages/DestinationGrid";
 import ReservationSystem from "./pages/Reservation";
 import Rutas from "./pages/Routes";
+import Lenis from "@studio-freight/lenis";
+import { useEffect } from "react";
+
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    
+    lenis.on('scroll', (e: unknown) => {
+      console.log(e);
+    });
+
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
+
+
   return (
     <HashRouter>
       <Routes>
